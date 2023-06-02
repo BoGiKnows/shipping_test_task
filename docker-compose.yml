@@ -1,0 +1,26 @@
+version: '2.17.3'
+
+services:
+  cars_db:
+    image: postgres:15.3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cars
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5435:5432
+  cars_web:
+    build: .
+    command: python /usr/src/rest/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/rest
+    ports:
+      - 8000:8000
+    depends_on:
+      - cars_db
+
+volumes:
+  postgres_data:
+
