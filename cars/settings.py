@@ -74,31 +74,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cars.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cars',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
-
-
 # DATABASES = {
 #     'default': {
 #         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'cars',
 #         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'cars_db',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }
 # }
+
+
+DATABASES = {
+    'default': {
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cars',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'cars_db',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
